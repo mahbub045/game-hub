@@ -22,7 +22,7 @@ function App() {
         </GridItem>
       </Stack>
       {/* Main */}
-      <GridItem area="main" bg="dodgerblue">
+      <GridItem area="main">
         <GameGrid />
       </GridItem>
     </Grid>
