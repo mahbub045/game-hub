@@ -11,7 +11,7 @@ function App() {
       }}
     >
       {/* Nave Bar */}
-      <GridItem area="nav" >
+      <GridItem area="nav">
         <NavBar />
       </GridItem>
       {/* Side Bar */}
