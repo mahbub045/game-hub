@@ -25,7 +25,6 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
   );
   return (
     <MenuRoot>
-      {" "}
       <MenuTrigger asChild>
         <Button variant="outline" size="sm" outline="none">
           Order by: {currentSortOrder?.label || "Relevance"}
@@ -49,8 +48,7 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
         marginY={2}
         borderRadius="5px"
         width="fit-content"
-        position="absolute"
-        zIndex="dropdown"
+        
       >
         {sortOrders.map((order) => (
           <MenuItem

@@ -41,8 +41,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
         marginY={2}
         borderRadius="5px"
         width="fit-content"
-        position="absolute"
-        zIndex="dropdown"
+        
       >
         {data.map((platform) => (
           <MenuItem
