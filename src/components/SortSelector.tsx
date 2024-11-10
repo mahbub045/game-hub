@@ -6,13 +6,29 @@ import {
   MenuTrigger,
 } from "@chakra-ui/react";
 
-const SortSelector = () => {
+interface Props {
+  onSelectSortOrder: (sortOrder: string) => void;
+  sortOrder: string;
+}
+
+const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
+  const sortOrders = [
+    { value: "", label: "Relevance" },
+    { value: "-added", label: "Data Added" },
+    { value: "name", label: "Name" },
+    { value: "-released", label: "Release Date" },
+    { value: "-metacritic", label: "Popularity" },
+    { value: "-rating", label: "Average Rating" },
+  ];
+  const currentSortOrder = sortOrders.find(
+    (order) => order.value === sortOrder
+  );
   return (
     <MenuRoot>
       {" "}
       <MenuTrigger asChild>
         <Button variant="outline" size="sm" outline="none">
-          Order by: Relevance
+          Order by: {currentSortOrder?.label || "Relevance"}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -36,21 +52,15 @@ const SortSelector = () => {
         position="absolute"
         zIndex="dropdown"
       >
-        {/* {data.map((platform) => (
+        {sortOrders.map((order) => (
           <MenuItem
             cursor="pointer"
-            value={platform.name}
-            key={platform.id}
-            onClick={() => onSelectPlatform(platform)}
+            value={order.value}
+            onClick={() => onSelectSortOrder(order.value)}
           >
-            {platform.name}
+            {order.label}
           </MenuItem>
-        ))} */}
-        <MenuItem value="t1">t1</MenuItem>
-        <MenuItem value="t1">t1</MenuItem>
-        <MenuItem value="t1">t1</MenuItem>
-        <MenuItem value="t1">t1</MenuItem>
-        <MenuItem value="t1">t1</MenuItem>
+        ))}
       </MenuContent>
     </MenuRoot>
   );
