@@ -5,6 +5,7 @@ import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
 import PlatformSelector from "./components/PlatformSelector";
+import SortSelector from "./components/SortSelector";
 import { Platfrom } from "./hooks/useGames";
 import { Genre } from "./hooks/useGenres";
 
@@ -41,12 +42,22 @@ function App() {
       </Stack>
       {/* Main */}
       <GridItem area="main">
+        {/* <HStack pl="4px" marginBottom={5}>
+          <PlatformSelector
+            selectedPlatform={gameQuery.platform}
+            onSelectPlatform={(platform) =>
+              setGameQuery({ ...gameQuery, platform })
+            }
+          />
+          <SortSelector />
+        </HStack> */}
         <PlatformSelector
           selectedPlatform={gameQuery.platform}
           onSelectPlatform={(platform) =>
             setGameQuery({ ...gameQuery, platform })
           }
         />
+        <SortSelector />
         <GameGrid gameQuery={gameQuery} />
       </GridItem>
     </Grid>

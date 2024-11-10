@@ -1,5 +1,3 @@
-import { Platfrom } from "@/hooks/useGames";
-import usePlatforms from "@/hooks/usePlatforms";
 import {
   Button,
   MenuContent,
@@ -8,19 +6,13 @@ import {
   MenuTrigger,
 } from "@chakra-ui/react";
 
-interface Props {
-  onSelectPlatform: (platform: Platfrom) => void;
-  selectedPlatform: Platfrom | null;
-}
-
-const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
-  const { data, error } = usePlatforms();
-  if (error) return null;
+const SortSelector = () => {
   return (
     <MenuRoot>
+      {" "}
       <MenuTrigger asChild>
         <Button variant="outline" size="sm" outline="none">
-          {selectedPlatform?.name || "Platforms"}
+          Order by: Relevance
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -44,7 +36,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
         position="absolute"
         zIndex="dropdown"
       >
-        {data.map((platform) => (
+        {/* {data.map((platform) => (
           <MenuItem
             cursor="pointer"
             value={platform.name}
@@ -53,10 +45,15 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
           >
             {platform.name}
           </MenuItem>
-        ))}
+        ))} */}
+        <MenuItem value="t1">t1</MenuItem>
+        <MenuItem value="t1">t1</MenuItem>
+        <MenuItem value="t1">t1</MenuItem>
+        <MenuItem value="t1">t1</MenuItem>
+        <MenuItem value="t1">t1</MenuItem>
       </MenuContent>
     </MenuRoot>
   );
 };
 
-export default PlatformSelector;
+export default SortSelector;
