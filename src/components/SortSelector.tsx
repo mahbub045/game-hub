@@ -54,6 +54,7 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
           <MenuItem
             cursor="pointer"
             value={order.value}
+            key={order.value}
             onClick={() => onSelectSortOrder(order.value)}
           >
             {order.label}
