@@ -43,7 +43,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
         width="fit-content"
         
       >
-        {data.map((platform) => (
+        {data?.results.map((platform) => (
           <MenuItem
             cursor="pointer"
             value={platform.name}
