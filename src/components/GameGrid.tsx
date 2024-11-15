@@ -1,4 +1,3 @@
-import { GameQuery } from "@/App";
 import useGames from "@/hooks/useGames";
 import { SimpleGrid, Spinner, Text, VStack } from "@chakra-ui/react";
 import React from "react";
@@ -7,13 +6,8 @@ import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
 
-interface Props {
-  gameQuery: GameQuery;
-}
-
-const GameGrid = ({ gameQuery }: Props) => {
-  const { data, error, isLoading, fetchNextPage, hasNextPage } =
-    useGames(gameQuery);
+const GameGrid = () => {
+  const { data, error, isLoading, fetchNextPage, hasNextPage } = useGames();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   const fetchedGamesCount =
@@ -35,7 +29,11 @@ const GameGrid = ({ gameQuery }: Props) => {
               colorPalette="purple"
               css={{ "--spinner-track-color": "colors.pink.400" }}
             />
-            <Text color="colorPalette.600" colorPalette="purple" fontWeight="600">
+            <Text
+              color="colorPalette.600"
+              colorPalette="purple"
+              fontWeight="600"
+            >
               Loading...
             </Text>
           </VStack>

@@ -1,3 +1,4 @@
+import useGameQueryStore from "@/store";
 import {
   Button,
   MenuContent,
@@ -6,12 +7,7 @@ import {
   MenuTrigger,
 } from "@chakra-ui/react";
 
-interface Props {
-  onSelectSortOrder: (sortOrder: string) => void;
-  sortOrder: string;
-}
-
-const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
+const SortSelector = () => {
   const sortOrders = [
     { value: "", label: "Relevance" },
     { value: "-added", label: "Data Added" },
@@ -20,6 +16,8 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
     { value: "-metacritic", label: "Popularity" },
     { value: "-rating", label: "Average Rating" },
   ];
+  const setSortOrder = useGameQueryStore((s) => s.setSortOrder);
+  const sortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
   const currentSortOrder = sortOrders.find(
     (order) => order.value === sortOrder
   );
@@ -44,18 +42,13 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
           </svg>
         </Button>
       </MenuTrigger>
-      <MenuContent
-        marginY={2}
-        borderRadius="5px"
-        width="fit-content"
-        
-      >
+      <MenuContent marginY={2} borderRadius="5px" width="fit-content">
         {sortOrders.map((order) => (
           <MenuItem
             cursor="pointer"
             value={order.value}
             key={order.value}
-            onClick={() => onSelectSortOrder(order.value)}
+            onClick={() => setSortOrder(order.value)}
           >
             {order.label}
           </MenuItem>
