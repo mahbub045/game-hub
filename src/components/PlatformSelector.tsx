@@ -1,5 +1,4 @@
-import { Platfrom } from "@/hooks/useGames";
-import usePlatforms from "@/hooks/usePlatforms";
+import usePlatforms, { Platform } from "@/hooks/usePlatforms";
 import {
   Button,
   MenuContent,
@@ -9,8 +8,8 @@ import {
 } from "@chakra-ui/react";
 
 interface Props {
-  onSelectPlatform: (platform: Platfrom) => void;
-  selectedPlatform: Platfrom | null;
+  onSelectPlatform: (platform: Platform) => void;
+  selectedPlatform: Platform | null;
 }
 
 const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
@@ -37,12 +36,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
           </svg>
         </Button>
       </MenuTrigger>
-      <MenuContent
-        marginY={2}
-        borderRadius="5px"
-        width="fit-content"
-        
-      >
+      <MenuContent marginY={2} borderRadius="5px" width="fit-content">
         {data?.results.map((platform) => (
           <MenuItem
             cursor="pointer"

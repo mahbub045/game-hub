@@ -9,11 +9,11 @@ import PlatformSelector from "./components/PlatformSelector";
 import SortSelector from "./components/SortSelector";
 
 import { Genre } from "./hooks/useGenres";
-import { Platfrom } from "./hooks/useGames";
+import { Platform } from "./hooks/usePlatforms";
 
 export interface GameQuery {
   genre: Genre | null;
-  platform: Platfrom | null;
+  platform: Platform | null;
   sortOrder: string;
   searchText: string;
 }
