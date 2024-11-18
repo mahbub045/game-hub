@@ -1,5 +1,31 @@
+// import { Box } from "@chakra-ui/react";
+// import { ReactNode } from "react";
+// interface Props {
+//   children: ReactNode;
+// }
+
+// const GameCardContainer = ({ children }: Props) => {
+//   return (
+//     <Box
+//       _hover={{
+//         transform: "scale(1.03)",
+//         boxShadow: "0 4px 20px rgba(128, 90, 213, 0.5)", // Add a purple glow effect
+//         transition: "transform 0.15s ease-in, box-shadow 0.15s ease-in",
+//       }}
+//       borderRadius={10}
+//       overflow="hidden"
+//     >
+//       {children}
+//     </Box>
+//   );
+// };
+
+// export default GameCardContainer;
+
+
 import { Box } from "@chakra-ui/react";
 import { ReactNode } from "react";
+
 interface Props {
   children: ReactNode;
 }
@@ -7,12 +33,15 @@ interface Props {
 const GameCardContainer = ({ children }: Props) => {
   return (
     <Box
+      position="relative" // Position to support glow
       _hover={{
-        transform: "scale(1.03)",
-        transition: "transform .15s ease-in",
+        transform: "scale(1.03)", // Slight scale
+        boxShadow: "0 0 20px 10px rgba(128, 90, 213, 0.6)", // Purple glow
+        transition: "transform 0.15s ease-in, box-shadow 0.15s ease-in",
       }}
-      borderRadius={10}
-      overflow="hidden"
+      borderRadius="lg" // Rounded corners
+      overflow="hidden" // Prevent overflow
+      border="1px solid rgba(128, 90, 213, 0.4)" // Optional border for definition
     >
       {children}
     </Box>
@@ -20,3 +49,4 @@ const GameCardContainer = ({ children }: Props) => {
 };
 
 export default GameCardContainer;
+

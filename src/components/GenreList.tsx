@@ -44,6 +44,7 @@ const GenreList = () => {
                 overflowWrap="break-word"
                 textAlign="left"
                 variant={genre.id === selectedGenreId ? "outline" : "ghost"}
+                borderColor={genre.id === selectedGenreId ? "purple" : "transparent"}
                 fontSize="md"
                 onClick={() => setSelectedGenreId(genre.id)}
               >

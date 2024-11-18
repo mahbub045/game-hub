@@ -18,13 +18,7 @@ const SearchInput = () => {
         }
       }}
     >
-      <Flex
-        align="center"
-        border="1px solid"
-        borderColor="gray.300"
-        borderRadius="2xl"
-        px={3}
-      >
+      <Flex align="center" border="1px solid purple" borderRadius="2xl" px={3}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

@@ -24,7 +24,7 @@ const SortSelector = () => {
   return (
     <MenuRoot>
       <MenuTrigger asChild>
-        <Button variant="outline" size="sm" outline="none">
+        <Button border="1px solid purple" variant="outline" size="sm" outline="none">
           Order by: {currentSortOrder?.label || "Relevance"}
           <svg
             xmlns="http://www.w3.org/2000/svg"

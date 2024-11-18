@@ -18,7 +18,7 @@ const PlatformSelector = () => {
   return (
     <MenuRoot>
       <MenuTrigger asChild>
-        <Button variant="outline" size="sm" outline="none">
+        <Button variant="outline" size="sm" outline="none" border="1px solid purple">
           {selectedPlatform?.name || "Platforms"}
           <svg
             xmlns="http://www.w3.org/2000/svg"
