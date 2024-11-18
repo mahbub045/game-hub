@@ -1,5 +1,5 @@
 import useScreenshots from "@/hooks/useScreenshot";
-import { Image, SimpleGrid } from "@chakra-ui/react";
+import { Heading, Image, SimpleGrid } from "@chakra-ui/react";
 
 interface Props {
   gameId: number;
@@ -13,11 +13,16 @@ const GameScreenshots = ({ gameId }: Props) => {
   if (error) throw error;
 
   return (
-    <SimpleGrid columns={{ base: 1, md: 2 }} columnGap={2} rowGap={2}>
-      {data?.results.map((file) => (
-        <Image key={file.id} src={file.image} borderRadius="md" />
-      ))}
-    </SimpleGrid>
+    <>
+      <Heading fontSize="5xl" marginY={5}>
+        Screenshots
+      </Heading>
+      <SimpleGrid columns={{ base: 1, md: 2 }} columnGap={2} rowGap={2}>
+        {data?.results.map((file) => (
+          <Image key={file.id} src={file.image} borderRadius="md" />
+        ))}
+      </SimpleGrid>
+    </>
   );
 };
 
