@@ -19,7 +19,13 @@ const GameScreenshots = ({ gameId }: Props) => {
       </Heading>
       <SimpleGrid columns={{ base: 1, md: 2 }} columnGap={2} rowGap={2}>
         {data?.results.map((file) => (
-          <Image key={file.id} src={file.image} borderRadius="md" />
+          <Image
+            border="md"
+            borderRadius="md"
+            borderColor="purple"
+            key={file.id}
+            src={file.image}
+          />
         ))}
       </SimpleGrid>
     </>
