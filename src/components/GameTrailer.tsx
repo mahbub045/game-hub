@@ -15,7 +15,15 @@ const GameTrailer = ({ gameId }: Props) => {
 
   return first ? (
     <>
-      <Heading fontSize="5xl" marginY={5}>
+      <Heading
+        style={{
+          background: "linear-gradient(to left, #7928CA, #FF0080)", // Gradient color
+          WebkitBackgroundClip: "text", // Clips the background to the text
+          color: "transparent", // Makes the text color transparent to show the gradient
+        }}
+        fontSize="4xl"
+        marginY={5}
+      >
         Trailer
       </Heading>
       <Box

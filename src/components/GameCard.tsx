@@ -24,12 +24,13 @@ const GameCard = ({ game }: Props) => {
         <Heading fontSize="xl">
           <Text
             _hover={{
-              textDecoration: "underline",
-              cursor: "pointer",
+              textDecoration: "underline", // Apply underline on hover
+              cursor: "pointer", // Change cursor on hover
             }}
           >
             <Link to={"/games/" + game.slug}>{game.name}</Link>
           </Text>
+
           <Emoji rating={game.rating_top} />
         </Heading>
       </CardBody>

@@ -22,7 +22,15 @@ const GenreList = () => {
 
   return (
     <>
-      <Heading fontSize="2xl" marginBottom={3}>
+      <Heading
+        fontSize="2xl"
+        marginBottom={3}
+        style={{
+          background: "linear-gradient(to left, #7928CA, #FF0080)", // Gradient color
+          WebkitBackgroundClip: "text", // Clips the background to the text
+          color: "transparent", // Makes the text color transparent to show the gradient
+        }}
+      >
         Genres
       </Heading>
       <List.Root>
@@ -44,7 +52,9 @@ const GenreList = () => {
                 overflowWrap="break-word"
                 textAlign="left"
                 variant={genre.id === selectedGenreId ? "outline" : "ghost"}
-                borderColor={genre.id === selectedGenreId ? "purple" : "transparent"}
+                borderColor={
+                  genre.id === selectedGenreId ? "purple" : "transparent"
+                }
                 fontSize="md"
                 onClick={() => setSelectedGenreId(genre.id)}
               >

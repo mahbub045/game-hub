@@ -17,7 +17,17 @@ const GameDetailPage = () => {
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} columnGap={5}>
       <GridItem>
-        <Heading fontSize="3xl" marginY={3}>{game.name}</Heading>
+        <Heading
+          fontSize="3xl"
+          marginY={3}
+          style={{
+            background: "linear-gradient(to left, #7928CA, #FF0080)", // Gradient color
+            WebkitBackgroundClip: "text", // Clips the background to the text
+            color: "transparent", // Makes the text color transparent to show the gradient
+          }}
+        >
+          {game.name}
+        </Heading>
         <ExpandableText>{game.description_raw}</ExpandableText>
         <GameAttributes game={game} />
       </GridItem>

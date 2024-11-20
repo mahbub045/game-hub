@@ -14,7 +14,15 @@ const GameScreenshots = ({ gameId }: Props) => {
 
   return (
     <>
-      <Heading fontSize="5xl" marginY={7}>
+      <Heading
+        fontSize="4xl"
+        marginY={7}
+        style={{
+          background: "linear-gradient(to left, #7928CA, #FF0080)", // Gradient color
+          WebkitBackgroundClip: "text", // Clips the background to the text
+          color: "transparent", // Makes the text color transparent to show the gradient
+        }}
+      >
         Screenshots
       </Heading>
       <SimpleGrid columns={{ base: 1, md: 2 }} columnGap={2} rowGap={2}>
