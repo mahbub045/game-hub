@@ -20,9 +20,15 @@ const GameScreenshots = ({ gameId }: Props) => {
       <SimpleGrid columns={{ base: 1, md: 2 }} columnGap={2} rowGap={2}>
         {data?.results.map((file) => (
           <Image
-            border="md"
+            position="relative" // Position to support glow
+            _hover={{
+              transform: "scale(1.03)", // Slight scale
+              boxShadow: "0 0 20px 10px rgba(128, 90, 213, 0.6)", // Purple glow
+              transition: "transform 0.15s ease-in, box-shadow 0.15s ease-in",
+            }}
+            overflow="hidden" // Prevent overflow
+            border="1px solid purple" // Optional border for definition
             borderRadius="md"
-            borderColor="purple"
             key={file.id}
             src={file.image}
           />

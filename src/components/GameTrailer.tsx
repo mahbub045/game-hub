@@ -18,7 +18,17 @@ const GameTrailer = ({ gameId }: Props) => {
       <Heading fontSize="5xl" marginY={5}>
         Trailer
       </Heading>
-      <Box border="md" borderRadius="md" borderColor="purple">
+      <Box
+        position="relative" // Position to support glow
+        _hover={{
+          transform: "scale(1.03)", // Slight scale
+          boxShadow: "0 0 20px 10px rgba(128, 90, 213, 0.6)", // Purple glow
+          transition: "transform 0.15s ease-in, box-shadow 0.15s ease-in",
+        }}
+        overflow="hidden" // Prevent overflow
+        border="3px solid purple"
+        borderRadius="md"
+      >
         <video
           autoPlay
           muted
