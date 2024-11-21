@@ -13,16 +13,10 @@ const GameHeading = () => {
   const heading = `${platform?.name || ""} ${genre?.name || ""} Games`;
 
   return (
-    <Heading
-      as="h1"
-      marginY={10}
-      fontSize="5xl"
-      color={'#7928CA'}
-    >
+    <Heading as="h1" marginY={10} fontSize="5xl" color={"#7928CA"}>
       {heading}
     </Heading>
   );
 };
 
 export default GameHeading;
-
